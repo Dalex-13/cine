@@ -3,7 +3,7 @@ let data = ["<b>Asiento:</b>"];
 function init() {
   let fecha_compra = document.getElementById("fecha_cine");
 
-  
+  // let cajaPelicula = document.getElementById("pelicula");
 
   let pelicula1 = document.getElementById("p1");
   let pelicula2 = document.getElementById("p2");
@@ -11,6 +11,13 @@ function init() {
   let pelicula4 = document.getElementById("p4");
   let pelicula5 = document.getElementById("p5");
   let pelicula6 = document.getElementById("p6");
+
+  // pelicula1 = "Ainbo La Guerrera del Amazonas";
+  // pelicula2 = "Asalto a la Casa de la Monedas";
+  // pelicula3 = "El Monasterio, La Puerta del Diablo";
+  // pelicula4 = "Espíritus Oscuros";
+  // pelicula5 = "FREE! The Final Stroke";
+  // pelicula6 = "Terremoto 8.5";
 
   let asientoB1 = document.getElementById("b1");
   let asientoB2 = document.getElementById("b2");
@@ -126,10 +133,6 @@ function init() {
     data.push("B15");
   };
 
-
-
-
-
   asientoD1.onclick = function (e) {
     data.push("D1");
   };
@@ -176,9 +179,6 @@ function init() {
     data.push("D15");
   };
 
-
-
-  
   asientoF1.onclick = function (e) {
     data.push("F1");
   };
@@ -225,10 +225,6 @@ function init() {
     data.push("F15");
   };
 
-
-
-
-  
   asientoH1.onclick = function (e) {
     data.push("H1");
   };
@@ -274,57 +270,72 @@ function init() {
   asientoH15.onclick = function (e) {
     data.push("H15");
   };
-  
-let r;
+
+  let r;
   boton.onclick = function (e) {
-      if (data.length >= 2) {
-        r = "<b>total:</b> S/.20.00";
-      }
-      if (data.length >= 3) {
-        r = "<b>total:</b> S/.40.00";
-      }
-      if (data.length >= 4) {
-        r = "<b>total:</b> S/.60.00";
-      }
-      if (data.length >= 5) {
-        r = "<b>total:</b> S/.80.00";
-      }
-      if (data.length >= 6) {
-        r = "<b>total:</b> S/.100.00";
-      }
-      if (data.length >= 7) {
-        r = "<b>total:</b> S/.120.00";
-      }
-      if (data.length >= 8) {
-        r = "<b>total:</b> S/.140.00";
-      }
-      if (data.length >= 9) {
-        r = "<b>total:</b> S/.160.00";
-      }
+    if (data.length >= 2) {
+      r = "<b>total:</b> S/.20.00";
+    }
+    if (data.length >= 3) {
+      r = "<b>total:</b> S/.40.00";
+    }
+    if (data.length >= 4) {
+      r = "<b>total:</b> S/.60.00";
+    }
+    if (data.length >= 5) {
+      r = "<b>total:</b> S/.80.00";
+    }
+    if (data.length >= 6) {
+      r = "<b>total:</b> S/.100.00";
+    }
+    if (data.length >= 7) {
+      r = "<b>total:</b> S/.120.00";
+    }
+    if (data.length >= 8) {
+      r = "<b>total:</b> S/.140.00";
+    }
+    if (data.length >= 9) {
+      r = "<b>total:</b> S/.160.00";
+    }
 
 
-      let peli;
-      if (peli = pelicula1) {
-        peli = "Ainbo La Guerrera del Amazonas";
-      } if (peli = pelicula2) {
-        peli = "Asalto a la Casa de la Monedas";
-      } if (peli = pelicula3) {
-        peli = "El Monasterio, La Puerta del Diablo";
-      } if (peli = pelicula4) {
-        peli = "Espíritus Oscuros";
-      } if (peli = pelicula5) {
-        peli = "FREE! The Final Stroke";
-      } if (peli = pelicula6) {
-        peli = "Terremoto 8.5";
-      } 
-      
-      
-    document.getElementById("comentario").innerHTML =
-      "<b>Fecha de Compra:</b> "+fecha_compra.value + "<br/>" +
-      "<b>Pelicula:</b><br/>"+peli +"<br/>"+
-      data + "<br/>" + r + "<br/>"+ "<b>¡Gracias por su Compra!</b>";
+    // if ((peli == pelicula1)) {
+    //   peli = "Ainbo La Guerrera del Amazonas";
+    // }
+    // if ((peli = pelicula2)) {
+    //   peli = "Asalto a la Casa de la Monedas";
+    // }
+    // if ((peli = pelicula3)) {
+    //   peli = "El Monasterio, La Puerta del Diablo";
+    // }
+    // if ((peli = pelicula4)) {
+    //   peli = "Espíritus Oscuros";
+    // }
+    // if ((peli = pelicula5)) {
+    //   peli = "FREE! The Final Stroke";
+    // }
+    // if ((peli = pelicula6)) {
+    //   peli = "Terremoto 8.5";
+    // }
+
+    // recuperación de datos comboBox
+    let peli = document.getElementById("pelicula");
+    peli.addEventListener("change", function () {
+      console.log(peli.value);
+    });
     
+
+    document.getElementById("comentario").innerHTML =
+      "<b>Fecha de Compra:</b> " +
+      fecha_compra.value +
+      "<br/>" +
+      "<b>Pelicula:</b><br/>" +
+      peli.value +
+      "<br/>" +
+      data +
+      "<br/>" +
+      r +
+      "<br/>" +
+      "<b>¡Gracias por su Compra!</b>";
   };
 }
-
-
